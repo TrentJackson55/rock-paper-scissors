@@ -20,5 +20,11 @@ let playRound = (playerSelection, computerSelection) => {
 }
 
 let game = () => {
-    
+    let rounds = parseInt(prompt('How many rounds would you like to play?'));
+
+    for (let i = 0; i <= rounds; i++) {
+        let playerChoice = toUpperCase(prompt('What will you shoot?'));
+        let compChoice = getComputerChoice();
+        playRound(playerChoice, compChoice);
+    }
 }
