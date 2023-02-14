@@ -16,7 +16,18 @@ let getComputerChoice = () => {
  * @returns {string} Message indicating win or loss
  */
 let playRound = (playerSelection, computerSelection) => {
-    
+
+    if (
+        playerSelection == 'ROCK' && computerSelection == 'SCISSORS' ||
+        playerSelection == 'PAPER' && computerSelection == 'ROCK' ||
+        playerSelection == 'SCISSORS' && computerSelection == 'PAPER'
+    ) { 
+        alert('You Win!');
+    } else if (playerSelection == computerSelection) {
+        alert('It\'s a tie!');
+    } else {
+        alert('Computer Wins!');
+    }
 }
 
 let game = () => {
