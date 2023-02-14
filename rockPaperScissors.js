@@ -4,6 +4,7 @@
  * @returns {string} Computer's choice
  */
 let getComputerChoice = () => {
+    
     let choices = ['ROCK', 'PAPER', 'SCISSORS'];
     return choices[parseInt(Math.random() * choices.length)];
 }
@@ -36,6 +37,7 @@ let playRound = (playerSelection, computerSelection) => {
  * @returns {string} Message indicating winner
  */
 let game = () => {
+
     let rounds = parseInt(prompt('How many rounds would you like to play?'));
 
     for (let i = 0; i < rounds; i++) {
