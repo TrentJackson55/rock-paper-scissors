@@ -30,6 +30,11 @@ let playRound = (playerSelection, computerSelection) => {
     }
 }
 
+/**
+ * Main RPS game. Choose Rounds and play
+ * 
+ * @returns {string} Message indicating winner
+ */
 let game = () => {
     let rounds = parseInt(prompt('How many rounds would you like to play?'));
 
