@@ -1,10 +1,16 @@
 /**
+ * These will hold cpu and player scores to determine winner.
+ */
+var playerScore = 0;
+var compScore = 0;
+
+/**
  * Return a random choice (Rock, Paper or Scissors).
  * 
  * @returns {string} Computer's choice
  */
 let getComputerChoice = () => {
-    
+
     let choices = ['ROCK', 'PAPER', 'SCISSORS'];
     return choices[parseInt(Math.random() * choices.length)];
 }
@@ -24,10 +30,14 @@ let playRound = (playerSelection, computerSelection) => {
         playerSelection == 'SCISSORS' && computerSelection == 'PAPER'
     ) { 
         alert('You Win!');
+        playerScore++
     } else if (playerSelection == computerSelection) {
         alert('It\'s a tie!');
+        playerScore++
+        compScore++
     } else {
         alert('Computer Wins!');
+        compScore++
     }
 }
 
@@ -43,6 +53,9 @@ let game = () => {
     for (let i = 0; i < rounds; i++) {
         let playerChoice = prompt('What will you shoot?').toUpperCase();
         let compChoice = getComputerChoice();
+
         playRound(playerChoice, compChoice);
+
     }
+    console.log("Player Score: " + playerScore, "CPU Score: " + compScore);
 }
