@@ -29,14 +29,11 @@ let playRound = (playerSelection, computerSelection) => {
         playerSelection == 'PAPER' && computerSelection == 'ROCK' ||
         playerSelection == 'SCISSORS' && computerSelection == 'PAPER'
     ) { 
-        alert('You Win!');
         playerScore++
     } else if (playerSelection == computerSelection) {
-        alert('It\'s a tie!');
         playerScore++
         compScore++
     } else {
-        alert('Computer Wins!');
         compScore++
     }
 }
@@ -55,7 +52,15 @@ let game = () => {
         let compChoice = getComputerChoice();
 
         playRound(playerChoice, compChoice);
-
     }
+
+    if (playerScore > compScore) {
+        console.log('You win!');
+    } else if (playerScore == compScore) {
+        console.log('Computer Wins!');
+    } else {
+        console.log('It\'s a tie!');
+    }
+
     console.log("Player Score: " + playerScore, "CPU Score: " + compScore);
 }
