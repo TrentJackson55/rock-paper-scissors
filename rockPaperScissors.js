@@ -24,17 +24,27 @@ let getComputerChoice = () => {
  */
 let playRound = (playerSelection, computerSelection) => {
 
+    console.log(`You shoot: ${playerSelection}, Computer shoots: ${computerSelection}`);
+
     if (
         playerSelection == 'ROCK' && computerSelection == 'SCISSORS' ||
         playerSelection == 'PAPER' && computerSelection == 'ROCK' ||
         playerSelection == 'SCISSORS' && computerSelection == 'PAPER'
-    ) { 
+    ) {
+        console.log(`${playerSelection} beats ${computerSelection}`) 
         playerScore++
+        console.log(`Player gets a point! (${playerScore})`)
+
     } else if (playerSelection == computerSelection) {
+        console.log(`${playerSelection} ties ${computerSelection}`)
         playerScore++
         compScore++
+        console.log('Both get a point!')
+        
     } else {
+        console.log(`${computerSelection} beats ${playerSelection}`)
         compScore++
+        console.log(`Computer gets a point! (${compScore})`)
     }
 }
 
@@ -54,13 +64,16 @@ let game = () => {
         playRound(playerChoice, compChoice);
     }
 
+    console.log("Player Score: " + playerScore, "CPU Score: " + compScore);
+
     if (playerScore > compScore) {
         console.log('You win!');
     } else if (playerScore == compScore) {
-        console.log('Computer Wins!');
-    } else {
         console.log('It\'s a tie!');
+    } else {
+        console.log('Computer Wins!');
     }
 
-    console.log("Player Score: " + playerScore, "CPU Score: " + compScore);
+    playerScore = 0;
+    compScore = 0;
 }
